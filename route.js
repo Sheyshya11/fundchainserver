@@ -11,7 +11,7 @@ const multer = require('multer')
 var storageUpload = multer.diskStorage({
   destination: function (req, file, callback) {
       /* callback(null, './outputfiles/'); */
-      callback(null, '../api/EncryptedFiles');
+      callback(null, 'public/EncryptedFiles');
   },
   filename: function (req, file, callback) {
       callback(null, "Encrypted_"+file.originalname);
@@ -20,7 +20,7 @@ var storageUpload = multer.diskStorage({
 
 var storageDownload = multer.diskStorage({
   destination: function (req, file, callback) {
-      callback(null, '../api/DecryptedFiles');
+      callback(null, 'public/DecryptedFiles');
      
 
   },
@@ -38,6 +38,7 @@ const download=multer({storage: storageDownload})
 
 router.post('/encrypt', upload.single('encrypted_file'), async (req, res) => {
   const filepath = req.file.path;
+
 
   try {
     const encryptedData = await encryptFile(filepath);
