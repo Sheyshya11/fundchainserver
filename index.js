@@ -22,6 +22,3 @@ app.use(routes)
 
 
 
-app.listen(5000,(req,res)=>{
-  console.log("Server is running on 5000 port")
-})
