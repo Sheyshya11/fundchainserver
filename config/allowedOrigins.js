@@ -1,5 +1,5 @@
 const allowedOrigins = [
-    "https://fundchainserver.vercel.app/"
+    "https://fundchainserve.onrender.com/"
   ]
   
   module.exports = allowedOrigins
