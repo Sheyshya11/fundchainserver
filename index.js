@@ -6,10 +6,10 @@ const ejs =require('ejs')
 const cors=require('cors')
 const { v4 } = require('uuid'); 
 const app= express();
-app.use(cors({
+/* app.use(cors({
   origin: '*'
-}))
-
+})) */
+app.use(cors(corsOptions))
 app.set("view engine", "ejs");
 app.set('views',path.join(__dirname,'views'))
 app.use(express.static(`${__dirname}/public`))
@@ -22,3 +22,6 @@ app.use(routes)
 
 
 
+app.listen(5000,(req,res)=>{
+  console.log("Server is running on 5000 port")
+})

@@ -1,5 +1,5 @@
 const allowedOrigins = [
-    "https://fundmechain.vercel.app/"
+    "https://fundmechain.vercel.app",
   ]
   
   module.exports = allowedOrigins
