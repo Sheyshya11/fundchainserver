@@ -42,7 +42,7 @@ router.post('/encrypt', upload.single('encrypted_file'), async (req, res) => {
   try {
     const encryptedData = await encryptFile(filepath);
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Access-Control-Allow-Origin', 'https://fundmechain.vercel.app');
+  
     res.json(encryptedData );
   } catch (error) {
     console.error(error);
@@ -56,7 +56,7 @@ router.post('/decrypt', download.single('decrypt_file'), async(req, res) => {
   try {
     const decryptedData = await decryptFile(filepath);
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Access-Control-Allow-Origin', 'https://fundmechain.vercel.app');
+ 
     res.json(decryptedData );
   } catch (error) {
     console.error(error);
